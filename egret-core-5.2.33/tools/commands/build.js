@@ -59,18 +59,18 @@ var Build = /** @class */ (function () {
                     case 0:
                         options = egret.args;
                         //以package.json判断是否第三方库？
-                        if (packageJsonContent = FileUtil.read(project.projectData.getFilePath("package.json"))) {
-                            packageJson = JSON.parse(packageJsonContent);
-                            if (packageJson.modules) { //通过有modules来识别是egret库项目
-                                globals.log(1119);
-                                globals.exit(1120);
-                                return [2 /*return*/, 0];
-                            }
-                            if (FileUtil.exists(project.projectData.getFilePath("tsconfig.json"))) {
-                                this.buildLib(packageJson);
-                                return [2 /*return*/, 0];
-                            }
-                        }
+                        // if (packageJsonContent = FileUtil.read(project.projectData.getFilePath("package.json"))) {
+                        //     packageJson = JSON.parse(packageJsonContent);
+                        //     if (packageJson.modules) { //通过有modules来识别是egret库项目
+                        //         globals.log(1119);
+                        //         globals.exit(1120);
+                        //         return [2 /*return*/, 0];
+                        //     }
+                        //     if (FileUtil.exists(project.projectData.getFilePath("tsconfig.json"))) {
+                        //         this.buildLib(packageJson);
+                        //         return [2 /*return*/, 0];
+                        //     }
+                        // }
                         utils.checkEgret();
                         if (!FileUtil.exists(FileUtil.joinPath(options.projectDir, 'libs/modules/egret/'))) {
                             project.manager.copyToLibs();
